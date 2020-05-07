@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
 import Input from './Input';
-import TagInInput from './TagInInput';
 
 function App() {
   return (
     <div className="App">
       <label style={{ fontFamily: "Poppins", fontSize: "20px" }}>Input with tags inside</label>
-      <TagInInput />
+      <Input inInputField={true}/>
       <label style={{ fontFamily: "Poppins", fontSize: "20px" }}>Input with tags below</label>
-      <Input />
+      <Input inInputField={false}/>
     </div>
   );
 }

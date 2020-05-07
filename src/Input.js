@@ -40,18 +40,32 @@ export default class Input extends Component {
     });
   };
 
+  renderTagsInInput = inInputField => {
+    return inInputField &&
+      <div className="in-input-tag-list">
+        {this.renderTags()}
+      </div>
+  }
+
+  renderTagsBelowInput = inInputField => {
+    return !inInputField && 
+      <div className="tag-list">
+        {this.renderTags()}
+      </div>
+  }
+
   render() {
+    const { inInputField } = this.props
     return (
-      <div className="input-container">
+      <div className={inInputField ? 'tag-in-input-container' : 'input-container'}> 
+        {this.renderTagsInInput(inInputField)}
         <input
           type="input"
           className="input"
           onKeyDown={ev => this.handleEnterKeyPress(ev)}
           onChange={ev => this.handleInput(ev)}
           value={this.state.newTag}/>
-        <div className="tag-list">
-          {this.renderTags()}
-        </div>
+        {this.renderTagsBelowInput(inInputField)}
       </div>
     )
   }
