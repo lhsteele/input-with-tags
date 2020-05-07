@@ -12,6 +12,18 @@
   border-radius: 10px;
 }
 
+.tag-in-input-container {
+  display: flex;
+  min-width: 300px;
+  max-width: 600px;
+  width: auto;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
 .input {
   width: 295px;
   height: 25px;
@@ -31,12 +43,30 @@
   margin-top: 10px;
 }
 
+.in-input-tag-list {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .tag {
   width: fit-content;
   height: 20px;
   background-color: #c5c5c5;
   margin: 5px;
   padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.in-input-tag {
+  width: fit-content;
+  height: 20px;
+  background-color: #c5c5c5;
+  margin: 5px;
+  padding: 0 5px;
   border-radius: 5px;
   font-size: 15px;
   display: flex;

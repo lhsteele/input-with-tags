@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Tag from './Tag';
+import Tag from './Tag'
 
-export default class Input extends Component {
+export default class TagInInput extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,22 +36,22 @@ export default class Input extends Component {
 
   renderTags = () => {
     return this.state.tagList.map((tag, i) => {
-      return <Tag key={i} value={tag} removeTag={() => this.removeTag(tag)} inInput={false}/>
+      return <Tag key={i} value={tag} removeTag={() => this.removeTag(tag)} inInput={true}/>
     });
   };
 
   render() {
     return (
-      <div className="input-container">
+      <div className="tag-in-input-container">
+        <div className="in-input-tag-list">
+          {this.renderTags()}
+        </div>
         <input
           type="input"
           className="input"
           onKeyDown={ev => this.handleEnterKeyPress(ev)}
           onChange={ev => this.handleInput(ev)}
-          value={this.state.newTag}/>
-        <div className="tag-list">
-          {this.renderTags()}
-        </div>
+          value={this.state.newTag} />
       </div>
     )
   }
